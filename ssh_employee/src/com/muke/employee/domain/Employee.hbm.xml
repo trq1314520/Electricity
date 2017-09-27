@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 员工的映射文件 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.muke.employee.domain.Employee" table="employee">
+		<id name="eid" column="eid">
+			<generator class="native"></generator>
+		</id>
+		<property name="ename" column="ename"></property>
+		<property name="sex" column="sex" />
+		<property name="birthday" column="birthday" />
+		<property name="joinDate" column="joinDate" />
+		<property name="eno" column="eno" length="20" />
+		<property name="username" column="username" />
+		<property name="password" column="password" />
+		<!-- 配置关联关系的映射，因为一个部门可以有多个员工，而一个员工只能属于其中一个部门，也就是一对多的关系 -->
+		<many-to-one name="department" class="com.muke.employee.domain.Department"
+			column="dno"></many-to-one>
+	</class>
+</hibernate-mapping>

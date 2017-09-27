@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd 
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- 当启动服务器时候就会加载spring中的配置文件 -->
+	<!-- 当加载hibernate的相关属性时候，就会将表建立起来 -->
+	<!-- 配置hibernate的相关属性 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<!-- 注入连接池 -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 配置hibernate的一些属性 -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">ture</prop>
+				<prop key="hibernate.format_sql">ture</prop>
+				<!-- 自动建表 -->
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<!-- 加载hibernate中的映射文件 -->
+		<property name="mappingResources">
+		<list>
+		<value>com/muke/employee/domain/Department.hbm.xml</value>
+		<value>com/muke/employee/domain/Employee.hbm.xml</value>
+		</list>
+		</property>
+	</bean>
+	<!-- 第二种配置action方法 配置action类 将action类交由spring管理 <bean id="productAction" 
+		class="cn.muke.ssh.action.ProductAction"> <property name="productService" 
+		ref="productService"></property> </bean> -->
+	<!-- spring中引入hibernate属性文件 -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+	<!-- 配置c3p0连接池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbc.url}"></property>
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+	<!-- 引入外部的属性文件 -->
+<!-- action类可以本身自己去创建，也可以交给spring去管理 ,此方案是交由spring去管理-->
+    <!-- 配置action类 -->
+    <bean id="employeeAction" class="com.muke.employee.action.EmployeeAction" scope="prototype">
+    <property name="employeeService" ref="employeeService"></property>
+    </bean>
+    <bean id="departmentAction" class="com.muke.employee.action.DepartmentAction" scope="prototype">
+    <property name="departmentService" ref="departmentService"></property>
+    </bean>
+	<!-- 配置业务层的类 -->
+	<bean id="employeeService" class="com.muke.employee.service.impl.EmployeeServiceImpl">
+	<property name="employeeDao" ref="employeeDao"/>
+	</bean>
+	<bean id="departmentService" class="com.muke.employee.service.impl.DepartmentServiceImpl">
+	<property name="departmentDao" ref="departmentDao"></property>
+	</bean>
+	<!-- 将service和dao交给spring去管理了 -->
+	
+	<!-- 配置DAO的类 -->
+	<bean id="employeeDao" class="com.muke.employee.dao.impl.EmployeeDaoImpl">
+	<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="departmentDao" class="com.muke.employee.dao.impl.DepartmentDaoImpl">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 在事物管理的类上面添加一个注解，也就是下面的开启注解事物 ，也就是在业务层类上添加transaction-->
+	<!-- 配置事物管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+	<!-- 属性 -->
+	<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- 开启注解事物 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>

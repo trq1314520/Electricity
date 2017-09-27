@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 映射文件 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.muke.employee.domain.Department" table="department">
+		<!-- 主键 -->
+		<id name="did" column="did">
+			<!-- 主键的生成策略 -->
+			<generator class="native" />
+		</id>
+		<property name="dname" column="dname" length="20" />
+		<property name="ddesc" column="ddesc" length="100" />
+		<!-- 关联关系映射 -->
+		<set name="employees">
+			<!-- 外键名称 -->
+			<key column="dno" />
+			<one-to-many class="com.muke.employee.domain.Employee" />
+		</set>
+	</class>
+</hibernate-mapping>
