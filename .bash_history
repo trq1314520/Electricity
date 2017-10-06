@@ -14,3 +14,4 @@ git status
 get add .bash_history
 git status
 exit
+ssh git@github.com
