@@ -17,7 +17,7 @@
   <script type="text/javascript">
     d=new dTree('d');
 
-    d.add('01','-1','员工管理系统');
+    d.add('01','-1','员工管理系统');//父节点为-1，根节点
     d.add('0101','01','人力资源部');
     d.add('010101','0101','部门管理','${pageContext.request.contextPath}/department_findAll.action','','right');
 

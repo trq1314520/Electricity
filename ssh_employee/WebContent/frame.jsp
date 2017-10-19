@@ -8,4 +8,5 @@
       <frame src="${pageContext.request.contextPath }/frame/left.jsp"> 
      <frame name="right" src="${pageContext.request.contextPath }/frame/right.jsp">
    </frameset>
+   <frame name="bottom" src="${pageContext.request.contextPath }/frame/buttom.jsp">
 </frameset>

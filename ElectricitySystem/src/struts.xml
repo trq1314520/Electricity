@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<!-- 类写好之后完成相应的配置，首先页面提交过来之后，需要经过Struts.xml，所在在struts.xml 中完成action的配置 -->
+<struts>
+<!--  第二种整合的方式  <package name="begin03" extends="struts-default" namespace="/">
+<action name="product_*" class="productAction" method={1}></action>
+</package> -->
+<!-- action交由struts自己去创建 -->
+<package name="ssh_employee" extends="struts-default" namespace="/">
+<!-- 配置action的标签 -->
+<action name="employee_*" class="employeeAction" method="{1}">
+<result name="input">/index.jsp</result>
+<result name="register">/jsp/Employee/register.jsp</result>
+<result name="success" type="redirect">/frame.jsp</result>
+<result name="saveSuccess" type="redirect">/frame.jsp</result>
+
+</action>
+<!-- <action name="department_*" class="departmentAction" method="{1}">
+<result name="findAll">/jsp/department/list.jsp</result>
+<result name="saveUI">/jsp/department/add.jsp</result>
+//action中返回savesuccess方法，然后重定向到分页的页面
+<result name="saveSuccess" type="redirectAction">department_findAll.action</result> 
+<result name="editSuccess">/jsp/department/edit.jsp</result>
+<result name="updateSuccess" type="redirectAction">department_findAll.action</result>
+<result name="deleteSuccess" type="redirectAction">department_findAll.action</result>
+</action> -->
+
+</package>
+</struts>
