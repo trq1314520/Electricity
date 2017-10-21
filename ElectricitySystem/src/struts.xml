@@ -16,6 +16,8 @@
 <result name="success" type="redirect">/frame.jsp</result>
 <result name="saveSuccess" type="redirect">/frame.jsp</result>
 <result name="findAll">/jsp/Employee/listEmployee.jsp </result>
+<result name="saveUI">/jsp/Employee/add.jsp </result>
+
 </action>   
 <!-- <action name="department_*" class="departmentAction" method="{1}">
 <result name="findAll">/jsp/department/list.jsp</result>

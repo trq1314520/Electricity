@@ -66,7 +66,10 @@ public class EmployeeAction extends ActionSupport implements
 		ActionContext.getContext().getValueStack().push(pageBean);
         return "findAll";
 	}
-
+    public String saveUI(){
+    	//查询所有的用户
+    	return "saveUI";
+    }
 
 	/* 在action中完成service的注入 */
 	private EmployeeService employeeService;

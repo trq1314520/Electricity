@@ -22,7 +22,7 @@
 <td align="center" style="font-size:24px; color:#666"> 用户管理</td>
 </tr>
 <tr>
-<td align="right" > <a href="addEmployee.html">添加</a></td>
+<td align="right" > <a href="${pageContext.request.contextPath}/employee_saveUI.action">添加</a></td>
 </tr>
 </table>
 <br/>
