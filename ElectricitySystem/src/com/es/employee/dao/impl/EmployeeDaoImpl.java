@@ -2,6 +2,7 @@ package com.es.employee.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import com.es.employee.dao.EmployeeDao;
@@ -27,6 +28,24 @@ public class EmployeeDaoImpl extends HibernateDaoSupport implements EmployeeDao 
 	public void save(Employee employee) {
 		this.getHibernateTemplate().save(employee);
 		
+	}
+
+	@Override
+	public int findCount() {
+		String hql="select count(*) from Employee";//得到用户的个数
+		List<Long> list=(List<Long>) this.getHibernateTemplate().find(hql);
+		if(list.size()>0){
+			return list.get(0).intValue();//将长整型变成int返回
+		}
+		
+		return 0;
+	}
+     //分页查询用户
+	@Override
+	public List<Employee> findByPage(int begin, int pageSize) {//离线查询
+		DetachedCriteria criteria=DetachedCriteria.forClass(Employee.class);
+		List<Employee> list=(List<Employee>) this.getHibernateTemplate().findByCriteria(criteria, begin, pageSize);
+		return list;
 	}
 
 	

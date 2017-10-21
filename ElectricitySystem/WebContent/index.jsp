@@ -49,8 +49,8 @@
 					<li class="l_tit">用户类型</li>
 					<li class="mb_10">
 					<select class="login_input" type="checkbox" >
-					<option selected>管理人员</option>
-					<option>普通人员</option>
+					<option value="1" selected>管理人员</option>
+					<option value="2" >普通人员</option>
 					</select>
 					</li>
 					<li><input type="submit" value="" class="login_btn"></li>

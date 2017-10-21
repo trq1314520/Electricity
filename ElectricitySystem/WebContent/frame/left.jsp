@@ -20,7 +20,7 @@
     
     d.add('01','-1','电流监测管理系统');
     d.add('0101','01','用户管理');
-    d.add('010101','0101','用户管理','listEmployee.jsp','','right');
+    d.add('010101','0101','用户管理','${pageContext.request.contextPath}/employee_findAll.action','','right');
     d.add('0102','01','日志管理');
     d.add('010201','0102','日志管理','rizhi.jsp','','right');
     d.add('0103','01','实验室管理');

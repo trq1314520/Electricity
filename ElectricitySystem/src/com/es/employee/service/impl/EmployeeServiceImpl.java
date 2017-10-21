@@ -1,8 +1,11 @@
 package com.es.employee.service.impl;
 
+import java.util.List;
+
 import org.springframework.transaction.annotation.Transactional;
 
 import com.es.employee.domain.Employee;
+import com.es.employee.domain.PageBean;
 import com.es.employee.service.EmployeeService;
 import com.es.employee.dao.EmployeeDao;
 
@@ -25,6 +28,30 @@ public Employee login(Employee employee) {
 public void save(Employee employee) {
 	employeeDao.save(employee);
 	
+}
+@Override
+//分页查询的方法
+public PageBean<Employee> findByPage(Integer currPage) {
+	PageBean<Employee> pageBean=new PageBean<Employee>();
+	//pagebean数据的封装
+	//封装当前的页数
+	pageBean.setCurrPage(currPage);//当前的页数是从外界传过来的
+	//封装每页显示的记录数,也就是设置pageBean页实体页中的PageSize
+	int pageSize=3;
+	pageBean.setPageSize(pageSize);
+	//封装总的记录数
+	//先查询记录数在Dao层，即持久层
+	int totalCount=employeeDao.findCount();
+	pageBean.setTotalPage(totalCount);
+	//封装总页数，一般是总记录数除以每页的记录数
+	double tc=totalCount;//先int转化为double类型
+	Double num=Math.ceil(tc/pageSize);//相除之后取整
+	pageBean.setTotalPage(num.intValue());//封装总页数，然后将double类型转化为int类型
+	//封装每页显示的数据：
+	int begin=(currPage-1)*pageSize;
+	List<Employee> list=employeeDao.findByPage(begin,pageSize);//先在数据库中查询所有的数据以及页数
+	pageBean.setList(list);//
+	return pageBean;
 }
 
 }

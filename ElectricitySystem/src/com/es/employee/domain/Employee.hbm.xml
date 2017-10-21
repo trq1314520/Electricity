@@ -11,6 +11,5 @@
 		<property name="username" column="username" />
 		<property name="password" column="password" />
 		<property name="customerType" column="customerType"/>
-
 	</class>
 </hibernate-mapping>
