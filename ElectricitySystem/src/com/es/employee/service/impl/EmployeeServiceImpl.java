@@ -59,11 +59,13 @@ public Employee findById(Integer eid) {
 	
 	return employeeDao.findById(eid);
 }
+@Transactional
 @Override
 public void update(Employee employee) {
 	employeeDao.update(employee);
 	
 }
+@Transactional
 @Override
 public void delete(Employee employee) {
 	employeeDao.delete(employee);
