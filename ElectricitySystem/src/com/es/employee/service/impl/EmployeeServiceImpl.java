@@ -23,6 +23,7 @@ public Employee login(Employee employee) {
 	Employee existEmployee=employeeDao.findByUsernameAndPassword(employee);
 	return existEmployee;
 }
+//将保存的方法交由事物去管理
 @Transactional
 @Override
 public void save(Employee employee) {
@@ -59,12 +60,14 @@ public Employee findById(Integer eid) {
 	
 	return employeeDao.findById(eid);
 }
+//将编辑后的方法交由事物去管理，否则就会出现只读状态
 @Transactional
 @Override
 public void update(Employee employee) {
 	employeeDao.update(employee);
 	
 }
+//将删除的方法交由事物去管理
 @Transactional
 @Override
 public void delete(Employee employee) {
