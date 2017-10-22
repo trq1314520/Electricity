@@ -11,5 +11,11 @@ public interface EmployeeService {
 
 	PageBean<Employee> findByPage(Integer currPage);
 
+	Employee findById(Integer eid);
+
+	void update(Employee employee);
+
+	void delete(Employee employee);
+
 
 }

@@ -47,6 +47,24 @@ public class EmployeeDaoImpl extends HibernateDaoSupport implements EmployeeDao 
 		List<Employee> list=(List<Employee>) this.getHibernateTemplate().findByCriteria(criteria, begin, pageSize);
 		return list;
 	}
+     //dao中根据用户的id查询用户的方法
+	@Override
+	public Employee findById(Integer eid) {
+		
+		return this.getHibernateTemplate().get(Employee.class, eid);
+	}
+
+	@Override
+	public void update(Employee employee) {
+		this.getHibernateTemplate().update(employee);
+		
+	}
+
+	@Override
+	public void delete(Employee employee) {
+		this.getHibernateTemplate().delete(employee);
+		
+	}
 
 	
 

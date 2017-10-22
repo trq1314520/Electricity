@@ -70,7 +70,23 @@ public class EmployeeAction extends ActionSupport implements
     	//查询所有的用户
     	return "saveUI";
     }
+    //编辑修改用户的信息
+    public String edit(){
+    	//根据id的信息进行查询，但是id的信息已经封装到模型驱动中，直接调用业务层去查询即可，由于action层值负责控制，并不涉及查询
+    	employee=employeeService.findById(employee.getEid());
+    	return "editSuccess";
+    }
+    //修改员工一个执行的方法
+    public String update(){
+    	employeeService.update(employee);
+    	return "updateSuccess";
+    }
 
+    public String delete(){
+    	employee=employeeService.findById(employee.getEid());
+    	employeeService.delete(employee);
+    	return "deleteSuccess";
+    }
 	/* 在action中完成service的注入 */
 	private EmployeeService employeeService;
 

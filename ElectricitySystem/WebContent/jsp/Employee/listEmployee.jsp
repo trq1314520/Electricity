@@ -35,6 +35,8 @@
 <td align="center">登录密码</td>
 <td align="center">用户类型</td>
 <td align="center">编辑</td>
+<td align="center">删除</td>
+
 </tr>
 </thead>
 <s:iterator value="list" var="e">
@@ -43,7 +45,8 @@
 <td align="center"><s:property value="#e.username"/></td>
 <td align="center"><s:property value="#e.password"/></td>
 <td align="center"><s:property value="#e.customerType"/></td>
-<td align="center"><a href="editEmployee.html"><img src="${pageContext.request.contextPath}/images/page.gif"></a></td>
+<td align="center"><a href="${pageContext.request.contextPath }/employee_edit.action?eid=<s:property value="#e.eid"/>"><img src="${pageContext.request.contextPath}/images/edit.png"></a></td>
+<td align="center"><a href="${pageContext.request.contextPath }/employee_delete.action?eid=<s:property value="#e.eid"/>"><img src="${pageContext.request.contextPath}/images/page.gif"></a></td>
 </tr>
 </tbody>
 </s:iterator>

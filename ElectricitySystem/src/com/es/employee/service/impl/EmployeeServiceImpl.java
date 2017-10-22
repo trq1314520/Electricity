@@ -42,7 +42,7 @@ public PageBean<Employee> findByPage(Integer currPage) {
 	//封装总的记录数
 	//先查询记录数在Dao层，即持久层
 	int totalCount=employeeDao.findCount();
-	pageBean.setTotalPage(totalCount);
+	pageBean.setTotalCount(totalCount);
 	//封装总页数，一般是总记录数除以每页的记录数
 	double tc=totalCount;//先int转化为double类型
 	Double num=Math.ceil(tc/pageSize);//相除之后取整
@@ -52,6 +52,22 @@ public PageBean<Employee> findByPage(Integer currPage) {
 	List<Employee> list=employeeDao.findByPage(begin,pageSize);//先在数据库中查询所有的数据以及页数
 	pageBean.setList(list);//
 	return pageBean;
+}
+@Override
+//业务层根据用户的id查询用户的方法
+public Employee findById(Integer eid) {
+	
+	return employeeDao.findById(eid);
+}
+@Override
+public void update(Employee employee) {
+	employeeDao.update(employee);
+	
+}
+@Override
+public void delete(Employee employee) {
+	employeeDao.delete(employee);
+	
 }
 
 }

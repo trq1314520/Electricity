@@ -14,9 +14,13 @@
 <result name="input">/index.jsp</result>
 <result name="register">/jsp/Employee/register.jsp</result>
 <result name="success" type="redirect">/frame.jsp</result>
-<result name="saveSuccess" type="redirect">/frame.jsp</result>
+<result name="saveSuccess" type="redirect">employee_findAll.action</result>
 <result name="findAll">/jsp/Employee/listEmployee.jsp </result>
 <result name="saveUI">/jsp/Employee/add.jsp </result>
+<result name="editSuccess">/jsp/Employee/edit.jsp </result>
+<result name="updateSuccess" type="redirect">employee_findAll.action </result>
+<result name="deleteSuccess" type="redirect">employee_findAll.action </result>
+
 
 </action>   
 <!-- <action name="department_*" class="departmentAction" method="{1}">
