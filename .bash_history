@@ -99,3 +99,60 @@ git commit -m "新增添加用户，保存到数据库中，并且更新到显�
 git status
 git push origin master
 git status
+GIT SATUS
+git status
+git add ElectricitySystem/WebContent/jsp/Employee/listEmployee.jsp
+git add  ElectricitySystem/src/com/es/employee/action/EmployeeAction.java
+git add  ElectricitySystem/src/com/es/employee/dao/EmployeeDao.java
+git add  ElectricitySystem/src/com/es/employee/dao/impl/EmployeeDaoImpl.java
+git add  ElectricitySystem/src/com/es/employee/service/EmployeeService.java
+git satatus
+git status
+git add  ElectricitySystem/src/com/es/employee/service/impl/EmployeeServiceImpl.java
+git add ElectricitySystem/src/struts.xml
+git add  ElectricitySystem/WebContent/images/delete.gif
+git add ElectricitySystem/WebContent/images/edit.png
+git add ElectricitySystem/WebContent/jsp/Employee/edit.jsp
+git status
+git commit -m "新增编辑和删除的方法，出现错误，无法进行修改后的保存"
+git status
+git push origin master
+git status
+git add .bash_history
+git status
+git commit -m "增加历史文件"
+git status 
+git push origin master
+git status
+git exit
+exit
+git status
+git add  ElectricitySystem/src/com/es/employee/domain/Employee.hbm.xml
+git add ElectricitySystem/src/com/es/employee/service/impl/EmployeeServiceImpl.java
+git status
+git commit -m "修改用户的编辑和删除，解决方法为在dao相应的方法中添加@transactional即可"
+git status
+git push origin master
+git status
+git status
+git add  ElectricitySystem/src/com/es/employee/service/impl/EmployeeServiceImpl.java
+git status
+git commit -m "在service中添加事务的注释，将方法交由事务去管理"
+git status
+git commit origin master
+git push origin master
+git status
+exit
+git status
+git add ElectricitySystem/src/com/es/library/
+git add ElectricitySystem/src/applicationContext.xml
+git add ElectricitySystem/WebContent/jsp/Employee/register.jsp
+git add ElectricitySystem/WebContent/frame/top.jsp
+git add  ElectricitySystem/WebContent/frame/right.jsp
+git add ElectricitySystem/WebContent/frame.jsp
+git status
+git commit -m "新增实验室实体类"
+git push origin master
+git push origin master
+git status
+exit

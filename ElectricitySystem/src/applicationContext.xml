@@ -55,7 +55,8 @@
     <bean id="employeeAction" class="com.es.employee.action.EmployeeAction" scope="prototype">
     <property name="employeeService" ref="employeeService"></property>
     </bean>
-    <bean id="libraryAction" class="com.es.library.action.LibraryAction">
+    
+    <bean id="libraryAction" class="com.es.library.action.LibraryAction" scope="prototype">
     <property name="libraryService" ref="libraryService"></property>
     </bean>
     

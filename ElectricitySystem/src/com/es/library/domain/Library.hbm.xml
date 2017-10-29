@@ -8,6 +8,6 @@
 <generator class="native"></generator>
 </id>
 <property name="lname" column="lname"></property>
-<property name="loaction" column="loaction"></property>
+<property name="location" column="location"></property>
 </class>
 </hibernate-mapping>
