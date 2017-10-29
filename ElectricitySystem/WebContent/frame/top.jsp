@@ -22,13 +22,17 @@
 		浙江工业大学实验室电流监测管理系统V1.0版本
 	</div>
 	<div class="div2">
+	<table>
 	<tr>
-	<td><a href="#" target="_blank">实验室一</a></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<td><a href="#" target="_blank">实验室二</a></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<td><a href="${pageContext.request.contextPath }/library_find.action">实验室三</a></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<td><a href="${pageContext.request.contextPath }/library_find.action">实验室四</a></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<td><a href="${pageContext.request.contextPath }/library_find.action">实验室五</a></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<s:iterator var="l" value="#session.clist">
+	<td><a href="${pageContext.request.contextPath }/library_find.action" target="right"><s:property value="#l.lname"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<%-- <td><a href="#" target="_blank">实验室二</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<td><a href="${pageContext.request.contextPath }/library_find.action">实验室三</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<td><a href="${pageContext.request.contextPath }/library_find.action">实验室四</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<td><a href="${pageContext.request.contextPath }/library_find.action">实验室五</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> --%>
+	</s:iterator>
 	</tr>
+	</table>
 	</div>
 </body>
 </html>

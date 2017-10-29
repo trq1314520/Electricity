@@ -156,3 +156,26 @@ git push origin master
 git push origin master
 git status
 exit
+git status
+git add ElectricitySystem/src/com/es/library/service/impl/LibraryServiceImpl.java
+git add ElectricitySystem/src/com/es/library/service/LibraryService.java
+git add ElectricitySystem/src/com/es/library/domain/Library.hbm.xml
+git status
+git add ElectricitySystem/src/com/es/library/dao/impl/LibraryDaoImpl.java
+git add ElectricitySystem/src/com/es/library/dao/LibraryDao.java
+git add  ElectricitySystem/src/com/es/library/action/LibraryAction.java
+git status
+git add ElectricitySystem/src/applicationContext.xml
+git status
+git add .bash_history
+git status
+git commit -m "添加实验室类的方法"
+git push origin master
+exit
+git status
+git add  ElectricitySystem/src/com/es/library/action/LibraryAction.java
+git status
+git commit -m "增加类方法"
+git status
+git push origin master
+exit

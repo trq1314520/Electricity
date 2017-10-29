@@ -30,7 +30,7 @@ public String findLi(){
 	// 查询所有实验室的集合
 	List<Library> clist = libraryService.findLibAll();
 	//将实验室的所有集合存入到session中
-     ActionContext.getContext().getSession().put("clist","clist");
+     ActionContext.getContext().getSession().put("clist",clist);
      return "show";
 }
 }
