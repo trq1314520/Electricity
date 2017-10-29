@@ -14,7 +14,7 @@
 			<tr>
 				<td><img border="0"
 					src="${pageContext.request.contextPath }/images/library1.jpg"
-					width="1500px" height="600px" />
+					width="1200px" height="600px" />
 			    </td>
 			</tr>
 		</table>

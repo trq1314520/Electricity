@@ -42,17 +42,17 @@
 		<table>
 			<tr>
 				<td>用户名：</td>
-				<td><input type="text" name="username" placeholder="请输入您的用户名"
+				<td><input type="text" id="username" name="username" placeholder="请输入您的用户名"
 					required class="input-text"></td>
 			</tr>
 			<tr>
 				<td>用户密码：</td>
-				<td><input type="password" name="password" required
+				<td><input type="password" id="password" name="password" required
 					class="input-text"></td>
 			</tr>
 			<tr>
 				<td>密码确认：</td>
-				<td><input type="password" name="repassword" required
+				<td><input type="password" id="repassword" name="repassword" required
 					class="input-text"></td>
 			</tr>
 			<tr>

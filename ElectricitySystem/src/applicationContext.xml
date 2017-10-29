@@ -33,6 +33,7 @@
 		<list>
 		<!-- //<value>com/es/employee/domain/Department.hbm.xml</value> -->
 		<value>com/es/employee/domain/Employee.hbm.xml</value>
+		<value>com/es/library/domain/Library.hbm.xml</value>
 		</list>
 		</property>
 	</bean>
@@ -54,6 +55,10 @@
     <bean id="employeeAction" class="com.es.employee.action.EmployeeAction" scope="prototype">
     <property name="employeeService" ref="employeeService"></property>
     </bean>
+    <bean id="libraryAction" class="com.es.library.action.LibraryAction">
+    <property name="libraryService" ref="libraryService"></property>
+    </bean>
+    
     <!-- <bean id="departmentAction" class="com.muke.employee.action.DepartmentAction" scope="prototype">
     <property name="departmentService" ref="departmentService"></property>
     </bean> -->
@@ -61,6 +66,10 @@
 	<bean id="employeeService" class="com.es.employee.service.impl.EmployeeServiceImpl">
 	<property name="employeeDao" ref="employeeDao"/>
 	</bean>
+	<bean id="libraryService" class="com.es.library.service.impl.LibraryServiceImpl">
+	<property name="libraryDao" ref="libraryDao"></property>
+	</bean>
+	
 	<!-- <bean id="departmentService" class="com.muke.employee.service.impl.DepartmentServiceImpl">
 	<property name="departmentDao" ref="departmentDao"></property>
 	</bean> -->
@@ -70,6 +79,10 @@
 	<bean id="employeeDao" class="com.es.employee.dao.impl.EmployeeDaoImpl">
 	<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	<bean id="libraryDao" class="com.es.library.dao.impl.LibraryDaoImpl">
+	<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
 	<!-- <bean id="departmentDao" class="com.muke.employee.dao.impl.DepartmentDaoImpl">
 	<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean> -->
