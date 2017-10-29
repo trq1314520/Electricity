@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.es.library.domain.Library;
 import com.es.library.service.LibraryService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -25,9 +26,11 @@ public class LibraryAction extends ActionSupport implements
 	public void setLibraryService(LibraryService libraryService) {
 		this.libraryService = libraryService;
 	}
-
+public String findLi(){
 	// 查询所有实验室的集合
 	List<Library> clist = libraryService.findLibAll();
 	//将实验室的所有集合存入到session中
-
+     ActionContext.getContext().getSession().put("clist","clist");
+     return "show";
+}
 }
