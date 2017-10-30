@@ -25,7 +25,8 @@
 	<table>
 	<tr>
 	<s:iterator var="l" value="#session.clist">
-	<td><a href="${pageContext.request.contextPath }/library_find.action" target="right"><s:property value="#l.lname"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<!-- 从页面中带入以及分类的数据和当前的页数 -->
+	<td><a href="${pageContext.request.contextPath }/device_findByLid.action?lid=<s:property value="#l.lid"/>&currPage=1" target="right"><s:property value="#l.lname"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 	<%-- <td><a href="#" target="_blank">实验室二</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 	<td><a href="${pageContext.request.contextPath }/library_find.action">实验室三</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 	<td><a href="${pageContext.request.contextPath }/library_find.action">实验室四</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>

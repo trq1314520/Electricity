@@ -34,6 +34,7 @@
 		<!-- //<value>com/es/employee/domain/Department.hbm.xml</value> -->
 		<value>com/es/employee/domain/Employee.hbm.xml</value>
 		<value>com/es/library/domain/Library.hbm.xml</value>
+		<value>com/es/device/domain/Device.hbm.xml</value>
 		</list>
 		</property>
 	</bean>
@@ -60,6 +61,10 @@
     <property name="libraryService" ref="libraryService"></property>
     </bean>
     
+    <bean id="deviceAction" class="com.es.device.action.DeviceAction" scope="prototype">
+    <property name="deviceService" ref="deviceService"/>
+    </bean>
+    
     <!-- <bean id="departmentAction" class="com.muke.employee.action.DepartmentAction" scope="prototype">
     <property name="departmentService" ref="departmentService"></property>
     </bean> -->
@@ -70,7 +75,10 @@
 	<bean id="libraryService" class="com.es.library.service.impl.LibraryServiceImpl">
 	<property name="libraryDao" ref="libraryDao"></property>
 	</bean>
-	
+    <bean id="deviceService" class="com.es.device.service.impl.DeviceServiceImpl">
+    <property name="deviceDao" ref="deviceDao"/>
+    </bean>
+    
 	<!-- <bean id="departmentService" class="com.muke.employee.service.impl.DepartmentServiceImpl">
 	<property name="departmentDao" ref="departmentDao"></property>
 	</bean> -->
@@ -81,6 +89,9 @@
 	<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	<bean id="libraryDao" class="com.es.library.dao.impl.LibraryDaoImpl">
+	<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="deviceDao" class="com.es.device.dao.impl.DeviceDaoImpl">
 	<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	

@@ -25,6 +25,10 @@
  <action name="library_*" class="libraryAction" method="{1}">
  <result name="show">/frame.jsp</result>
  </action>
+ 
+ <action name="device_*" class="deviceAction" method="{1}">
+ <result name="findByDid">/jsp/Device/listDevice.jsp</result>
+ </action>
 <!-- <action name="department_*" class="departmentAction" method="{1}">
 <result name="findAll">/jsp/department/list.jsp</result>
 <result name="saveUI">/jsp/department/add.jsp</result>
