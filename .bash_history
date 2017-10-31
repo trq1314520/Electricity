@@ -179,3 +179,37 @@ git commit -m "增加类方法"
 git status
 git push origin master
 exit
+git status
+git add ElectricitySystem/WebContent/frame/top.jsp
+git add ElectricitySystem/src/com/es/library/action/LibraryAction.java
+git add ElectricitySystem/src/com/es/library/domain/Library.hbm.xml
+git add  ElectricitySystem/src/struts.xml
+git status
+git add .bash_history
+git status
+git commit -m "修改实验室类的自动查询，添加，并且实时显示在页面上"
+git status
+git push origin master
+git status
+exit
+git status
+exit
+git status
+git add ElectricitySystem/src/com/es/utils/
+git add ElectricitySystem/src/com/es/device/
+git add ElectricitySystem/WebContent/products/
+git add ElectricitySystem/WebContent/jsp/Device/
+git add ElectricitySystem/WebContent/css/
+git status
+git add ElectricitySystem/src/struts.xml
+git add  ElectricitySystem/src/com/es/library/service/impl/LibraryServiceImpl.java
+git add ElectricitySystem/src/com/es/library/domain/Library.java
+git add ElectricitySystem/src/com/es/library/domain/Library.hbm.xml
+git add ElectricitySystem/WebContent/frame/top.jsp
+git status
+git add ElectricitySystem/src/applicationContext.xml
+git status
+git commit -m "增加一对多的页面显示"
+git push origin master
+git status
+exit
