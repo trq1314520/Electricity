@@ -23,8 +23,8 @@
 							<%-- 实现向商品详情的跳转 ${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#e.eid"/> --%>
 							<a href="#" target="_blank"> <img
 								src="${pageContext.request.contextPath}/<s:property value="#e.eimagepath"/>"
-								width="200" height="200" style="display: inline-block;"/> <span
-								style='color: green'> <s:property value="#e.ename" />
+								width="200" height="200" style="display: inline-block;"/> 
+								<span style="color:green;text-align:center"> <s:property value="#e.ename"/>
 							</span>
 						</a>
 						</li>
@@ -36,6 +36,7 @@
 				<span>第 <s:property value="pageBean.currPage" />/<s:property
 						value="pageBean.totalPage" /> 页
 				</span>
+				<span>总记录数:<s:property value="pageBean.totalCount"/>&nbsp;&nbsp;每页显示:<s:property value="pageBean.pageSize"/></span>
 				<s:if test="lid != null">
 					<s:if test="pageBean.currPage != 1">
 						<a

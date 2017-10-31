@@ -573,38 +573,6 @@ div.productList .result dt {
 }
 
 div.productList .table {
-	padding: 0px 2px;
-	margin-bottom: 10px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: solid 1px #dddddd;
-}
-
-div.productList .table li {
-	width: 176px;
-	height: 246px;
-	line-height: 20px;
-	float: left;
-	overflow: hidden;
-	border-bottom: solid 1px #e4e4e4;
-}
-
-div.productList .table li.last {
-	border-bottom: none;
-}
-
-div.productList .table li a {
-	height: 240px;
-	display: block;
-	padding: 3px;
-}
-
-div.productList .table li a:hover {
-	background-color: #f6f6f6;
-}
-
-div.productList .table span {
 	display: block;
 }
 
