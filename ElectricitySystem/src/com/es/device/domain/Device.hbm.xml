@@ -10,15 +10,19 @@
 			<generator class="native" />
 		</id>
 		<!-- 列表属性 -->
-		<property name="ename" column="ename"/>
-		<property name="eaddress" column="eaddress"/>
-		<property name="einputtime" column="einputtime"/>
-		<property name="eimagepath" column="eimagepath"/>
-		<property name="edesc"      column="edesc"/>
-		<property name="estate" column="estate"/>
+		<property name="ename" column="ename" />
+		<property name="eaddress" column="eaddress" />
+		<property name="einputtime" column="einputtime" />
+		<property name="eimagepath" column="eimagepath" />
+		<property name="edesc" column="edesc" />
+		<property name="estate" column="estate" />
 		<!-- 配置多对一方的集合，对于多对一，name的属性是此类中有关一方的属性，并且类为一方的全路径,column为对应表中的id号 -->
-		<many-to-one  name="library"  lazy="false" class="com.es.library.domain.Library" column="lid"></many-to-one>
-		<!-- <many-to-one  name="library" class="com.es.library.domain.Library" column="lid"> -->
-	</class> 
-
+		<many-to-one name="library" lazy="false"
+			class="com.es.library.domain.Library" column="lid"></many-to-one>
+		<!-- <many-to-one name="library" class="com.es.library.domain.Library" 
+			column="lid"> -->
+		<!-- 配置一对一双向关联 -->
+		<one-to-one name="electricity" lazy="false" class="com.es.electricity.domain.Electricity"
+			 property-ref="device"/>
+	</class>
 </hibernate-mapping>

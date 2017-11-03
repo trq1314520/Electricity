@@ -29,6 +29,9 @@
  <action name="device_*" class="deviceAction" method="{1}">
  <result name="findByDid">/jsp/Device/listDevice.jsp</result>
  </action>
+ <action name="electricity_*" class="electricityAction" method="{1}">
+ <result name="findByElid">/jsp/Electricity/showElectricity.jsp</result>
+ </action>
 <!-- <action name="department_*" class="departmentAction" method="{1}">
 <result name="findAll">/jsp/department/list.jsp</result>
 <result name="saveUI">/jsp/department/add.jsp</result>

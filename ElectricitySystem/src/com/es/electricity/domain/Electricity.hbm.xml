@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.es.electricity.domain.Electricity" table="electricity">
+		<id name="elid" column="elid">
+			<generator class="native" />
+		</id>
+		<property name="elvalue" column="elvalue" />
+		<property name="eltime" column="eltime" />
+		<property name="elstarttime" column="elstarttime" />
+		<property name="elendtime" column="elendtime" />
+		<!-- 配置一对一的关系映射 -->
+		<many-to-one name="device" lazy="false" unique="true"  class="com.es.device.domain.Device" cascade="all" column="eid"/>
+	</class>
+</hibernate-mapping>

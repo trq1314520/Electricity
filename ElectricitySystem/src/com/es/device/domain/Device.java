@@ -2,6 +2,7 @@ package com.es.device.domain;
 
 import java.util.Date;
 
+import com.es.electricity.domain.Electricity;
 import com.es.library.domain.Library;
 
 public class Device {
@@ -13,6 +14,14 @@ private String eimagepath;
 private String edesc;
 private Integer estate;
 
+private Electricity electricity;
+
+public Electricity getElectricity() {
+	return electricity;
+}
+public void setElectricity(Electricity electricity) {
+	this.electricity = electricity;
+}
 //实验室的外键，由于hibernate不能建外键，只能建对象,使用一级分类的对象,也就是多的含有少的对象，少的含有多的集合
 //实验室对象
 private Library library;

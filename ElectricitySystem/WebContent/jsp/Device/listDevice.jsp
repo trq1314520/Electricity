@@ -21,7 +21,7 @@
 					<s:iterator var="e" value="pageBean.list">
 						<li>
 							<%-- 实现向商品详情的跳转 ${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#e.eid"/> --%>
-							<a href="#" target="_blank"> <img
+							<a href="${ pageContext.request.contextPath }/electricity_findByElid.action?eid=<s:property value="#e.eid"/>"> <img
 								src="${pageContext.request.contextPath}/<s:property value="#e.eimagepath"/>"
 								width="200" height="200" style="display: inline-block;"/> 
 								<span style="color:green;text-align:center"> <s:property value="#e.ename"/>
