@@ -19,7 +19,7 @@ public class ElectricityDaoImpl extends HibernateDaoSupport implements Electrici
 
 	@Override
 	public List<Electricity> findByElid(Integer eid) {
-		String hql="select count(*) from Electricity e join e.device d where d.eid=?  ";
+		String hql="select e from Electricity e join e.device d where d.eid=?";
 		List<Electricity> list= (List<Electricity>) this.getHibernateTemplate().find(hql, eid);
 		if(list!=null&&list.size()>0){
 			return list;

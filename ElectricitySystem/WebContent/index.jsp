@@ -19,6 +19,12 @@
  body{background:url(images/library8.jpg) no-repeat center top;} 
  .login_cont a {color:#E50007;}
 </style>
+<SCRIPT type="text/javascript">
+function submitrequest(action){
+eval("document.location='"+action+"'");
+}
+
+</SCRIPT>
 </head>
 
 <body>

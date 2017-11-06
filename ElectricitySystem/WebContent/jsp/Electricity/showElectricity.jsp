@@ -9,8 +9,10 @@
 </head>
 <body>
 	Welcome to my home!!!
+	<br/>
 	<s:iterator var="el" value="list">
 		<s:property value="#el.elvalue" />
+		<br/>
 		<s:property value="#el.elid" />
 	</s:iterator>
 </body>
