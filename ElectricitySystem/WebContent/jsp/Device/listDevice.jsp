@@ -19,13 +19,15 @@
 			<div id="result" class="result table clearfix">
 				<ul>
 					<s:iterator var="e" value="pageBean.list">
-						<li>
+						<li style="display:inline-block;">
 							<%-- 实现向商品详情的跳转 ${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#e.eid"/> --%>
-							<a href="${ pageContext.request.contextPath }/electricity_findByElid.action?eid=<s:property value="#e.eid"/>"> <img
+							<a
+							href="${ pageContext.request.contextPath }/electricity_findByElid.action?eid=<s:property value="#e.eid"/>">
+								<img style="display:inline-block;"
 								src="${pageContext.request.contextPath}/<s:property value="#e.eimagepath"/>"
-								width="200" height="200" style="display: inline-block;"/> 
-								<span style="color:green;text-align:center"> <s:property value="#e.ename"/>
-							</span>
+								width="170" height="170" /> 
+								<p style="color: green; text-align: center"> <s:property value="#e.ename" />
+							</p>
 						</a>
 						</li>
 					</s:iterator>
@@ -35,8 +37,8 @@
 			<div class="pagination">
 				<span>第 <s:property value="pageBean.currPage" />/<s:property
 						value="pageBean.totalPage" /> 页
-				</span>
-				<span>总记录数:<s:property value="pageBean.totalCount"/>&nbsp;&nbsp;每页显示:<s:property value="pageBean.pageSize"/></span>
+				</span> <span>总记录数:<s:property value="pageBean.totalCount" />&nbsp;&nbsp;每页显示:<s:property
+						value="pageBean.pageSize" /></span>
 				<s:if test="lid != null">
 					<s:if test="pageBean.currPage != 1">
 						<a

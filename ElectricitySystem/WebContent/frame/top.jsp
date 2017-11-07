@@ -19,7 +19,7 @@
 	<div class="div1">
 		<%-- //value表示传的值<s:property>是struts的标签，不是标准的html标签 --%>
 		<%-- 欢迎您：<s:property value="#session.existEmployee.ename"/> --%>
-		浙江工业大学实验室电流监测管理系统V1.0版本
+		浙江工业大学实验室设备电流监测管理系统V1.0版本
 	</div>
 	<div class="div2">
 	<table>

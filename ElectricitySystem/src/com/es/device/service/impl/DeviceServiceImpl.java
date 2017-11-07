@@ -24,7 +24,7 @@ public class DeviceServiceImpl implements DeviceService {
 		/*最终只需要返回一个PageBean就行了,所以创建出来一个对象,由于是刚创建出来的pageBean对象，所以里面并没有什么数据*/
 		PageBean<Device> pageBean=new PageBean<Device>();
 		pageBean.setCurrPage(currPage);//设置当前的页数到
-		 int pageSize=10;
+		 int pageSize=15;
 		 pageBean.setPageSize(pageSize);//设置每页显示的记录数
 		 int totalCount=0;
 		 totalCount=deviceDao.findCountLid(lid);
