@@ -213,3 +213,71 @@ git commit -m "增加一对多的页面显示"
 git push origin master
 git status
 exit
+git status
+git add ElectricitySystem/WebContent/images/common.gif
+git add  ElectricitySystem/src/com/es/library/dao/impl/LibraryDaoImpl.java
+git add  ElectricitySystem/WebContent/css/common.css
+git add ElectricitySystem/WebContent/jsp/Device/listDevice.jsp
+git status
+git add .bash_history
+git commit -m "修改页面显示设备的大小格式，达到要求的水平，但是只能在ie显示好，浏览器兼容有问题"
+git push origin master
+exit
+git status
+git add ElectricitySystem/WebContent/products/1/eimagepath1.jpg
+git add ElectricitySystem/WebContent/products/1/eimagepath0.jpg
+git add ElectricitySystem/WebContent/products/1/20171031233431.png
+git add  ElectricitySystem/src/com/es/device/service/impl/DeviceServiceImpl.java
+git add ElectricitySystem/WebContent/jsp/Device/listDevice.jsp
+git add ElectricitySystem/WebContent/css/product.css
+git add ElectricitySystem/WebContent/css/common.css
+git status
+git commit -m "修改显示的页面，但是由于显示的浏览器不同，会有不同的效果"
+git push origin master
+git status
+exit
+git status
+exit
+git status
+git add ElectricitySystem/src/com/es/electricity/
+git add ElectricitySystem/WebContent/jsp/Electricity/
+git add ElectricitySystem/src/struts.xml
+git add ElectricitySystem/src/com/es/device/domain/Device.java
+git add  ElectricitySystem/src/com/es/device/domain/Device.hbm.xml
+git status
+git add ElectricitySystem/.classpath
+git add ElectricitySystem/WebContent/jsp/Device/listDevice.jsp
+git add ElectricitySystem/src/applicationContext.xml
+git status
+git commit -m "新添加设备页面实现跳转到实时显示页面的一种跳转，但是出现在hql查询语句的时候，查询有点问题，暂时能跳转"
+git push origin master
+exit
+git status
+git add ElectricitySystem/WebContent/WEB-INF/lib/websocket-api.jar
+git add  ElectricitySystem/WebContent/WEB-INF/lib/spring-websocket-4.2.3.RELEASE.jar
+git add ElectricitySystem/src/com/es/electricity/dao/impl/ElectricityDaoImpl.java
+git add ElectricitySystem/WebContent/jsp/Electricity/showElectricity.jsp
+git add ElectricitySystem/WebContent/index.jsp
+git add ElectricitySystem/.classpath
+git status
+git add ElectricitySystem/WebContent/frame/buttom.jsp
+git status
+git commit -m "修改显示图标页面的查询语句，能读出数据"
+git push origin master
+git push origin master
+git status
+exit
+git status
+git add ElectricitySystem/src/com/es/device/service/impl/DeviceServiceImpl.java
+git add ElectricitySystem/WebContent/jsp/Device/listDevice.jsp
+git add ElectricitySystem/WebContent/frame/top.jsp
+git status
+git commit -m "修改页面显示的代码，也就是图片显示"
+git push origin master
+git status
+exit
+git clone https://github.com/google/pywebsocket.git
+exit
+git clone https://github.com/937129397/microBlog/tree/dev/microBlog
+git clone https://github.com/937129397/microBlog/tree/dev/microBlog.git
+exit
